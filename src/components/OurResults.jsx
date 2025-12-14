@@ -27,7 +27,7 @@ export default function OurResults() {
           
           {/* Left Side - Header */}
           <div>
-            <h2 className="text-5xl md:text-6xl font-eurostile font-bold text-white uppercase tracking-wider">
+            <h2 className="text-5xl md:text-6xl font-pirulen font-bold text-white uppercase tracking-wider">
               OUR RESULTS
             </h2>
           </div>

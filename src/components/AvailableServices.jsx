@@ -58,7 +58,7 @@ export default function AvailableServices() {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-eurostile font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-pirulen font-bold text-white mb-6">
             Available Services
           </h2>
           <p className="text-lg md:text-xl font-eurostile text-gray-400 max-w-3xl mx-auto">

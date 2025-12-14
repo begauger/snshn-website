@@ -15,7 +15,7 @@ export default function ApproachSections() {
 
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-3xl mx-auto px-6 md:px-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-eurostile font-bold text-white mb-6 uppercase tracking-wide">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
               MODERN AND SCIENTIFIC APPROACH
             </h2>
             <p className="text-base md:text-lg font-eurostile text-gray-200 leading-relaxed mb-4">
@@ -40,7 +40,7 @@ export default function ApproachSections() {
 
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-3xl mx-auto px-6 md:px-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-eurostile font-bold text-white mb-6 uppercase tracking-wide">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
               DIY PROPERTY ANALYZER
             </h2>
             <p className="text-base md:text-lg font-eurostile text-gray-200 leading-relaxed mb-4">

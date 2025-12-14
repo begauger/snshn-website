@@ -54,23 +54,20 @@ export default function Hero() {
     }
   ];
 
-  // Infinite scroll - advance one card every 5 seconds
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    const cardWidth = 388; // 380px + 8px gap
+    const cardWidth = 388;
     const originalSetWidth = cardWidth * reviews.length;
     let currentScroll = 0;
 
     const scrollInterval = setInterval(() => {
       currentScroll += cardWidth;
 
-      // When we've scrolled through one full set, instantly reset to the beginning of second set
-      // This creates seamless infinite loop
       if (currentScroll >= originalSetWidth) {
         container.scrollLeft = 0;
-        currentScroll = cardWidth; // Start at second card
+        currentScroll = cardWidth;
         setTimeout(() => {
           container.scrollTo({
             left: cardWidth,
@@ -90,19 +87,26 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pb-16">
-      {/* Background Image */}
+      <style jsx>{`
+        @font-face {
+          font-family: 'Pirulen';
+          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+        }
+      `}</style>
+
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/mke2.png" 
+          src="/src/assets/images/mke.png" 
           alt="Milwaukee Background" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
-      {/* Header Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center px-6 pt-24 mb-32">
-        <h1 className="text-5xl md:text-6xl font-eurostile font-bold mb-8 leading-tight text-white drop-shadow-2xl">
+        <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-white drop-shadow-2xl" style={{ fontFamily: 'Pirulen, sans-serif' }}>
           UPGRADE YOUR<br />LIVING
         </h1>
         
@@ -118,7 +122,6 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Infinite Horizontal Scrolling Cards */}
       <div className="relative z-10 w-full overflow-hidden mt-8">
         <div 
           ref={scrollContainerRef}
@@ -128,7 +131,6 @@ export default function Hero() {
             msOverflowStyle: 'none'
           }}
         >
-          {/* Triple the reviews for truly seamless infinite loop */}
           {[...reviews, ...reviews, ...reviews].map((review, index) => (
             <div 
               key={index}
@@ -136,7 +138,6 @@ export default function Hero() {
             >
               <div className="bg-zinc-900/90 backdrop-blur-sm border border-white/10 rounded-xl p-8 shadow-xl flex items-center gap-6 transition-all duration-300 hover:scale-105 hover:border-yellow-400/30 min-h-[220px]">
                 
-                {/* Left Side - Avatar and Info */}
                 <div className="flex flex-col items-center justify-center flex-shrink-0">
                   <div className="w-20 h-20 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center mb-3">
                     <span className="text-yellow-400 font-eurostile font-bold text-3xl">
@@ -151,16 +152,13 @@ export default function Hero() {
                   </p>
                 </div>
 
-                {/* Right Side - Quote and Metrics */}
                 <div className="flex-1 flex flex-col justify-between">
                   <p className="font-eurostile text-gray-300 text-sm mb-5 leading-relaxed italic">
                     "{review.quote}"
                   </p>
 
-                  {/* Metrics in Row */}
                   <div className="grid grid-cols-2 gap-4">
                     
-                    {/* Property Quality */}
                     <div>
                       <p className="font-eurostile text-xs text-gray-400 uppercase tracking-wider mb-1 text-center">
                         Quality
@@ -180,7 +178,6 @@ export default function Hero() {
                       </div>
                     </div>
 
-                    {/* Time with SNSHN */}
                     <div>
                       <p className="font-eurostile text-xs text-gray-400 uppercase tracking-wider mb-1 text-center">
                         Tenure

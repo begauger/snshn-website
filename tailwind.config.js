@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'pirulenrg' : ['pirulenrg','Eurostile' ],
         'eurostile': ['Eurostile', 'sans-serif'],
         'orbitron': ['Orbitron', 'sans-serif'],
       },

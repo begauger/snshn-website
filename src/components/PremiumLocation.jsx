@@ -4,7 +4,7 @@ export default function PremiumLocation() {
       <div className="max-w-7xl mx-auto">
         
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-eurostile font-bold text-white mb-6 uppercase tracking-wide">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
             PREMIUM LOCATION
           </h2>
           <p className="text-base md:text-lg font-eurostile text-gray-400 max-w-3xl mx-auto leading-relaxed">
@@ -22,7 +22,7 @@ export default function PremiumLocation() {
             />
           </div>
 
-          <h3 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-6 uppercase tracking-wide text-center">
+          <h3 className="text-3xl md:text-4xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide text-center">
             MILWAUKEE
           </h3>
 

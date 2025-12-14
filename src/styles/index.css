@@ -13,3 +13,13 @@ body {
   color: #ffffff;
   font-family: 'Eurostile', sans-serif;
 }
+@font-face {
+  font-family: 'Pirulen';
+  src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-pirulen {
+  font-family: 'Pirulen', sans-serif;
+}

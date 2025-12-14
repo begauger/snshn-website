@@ -11,7 +11,7 @@ export default function DIYAnalyzer() {
           
           {/* Title Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-eurostile font-bold text-white mb-6 uppercase tracking-wide">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
               DIY PROPERTY ANALYZER
             </h1>
             <p className="text-lg md:text-xl font-eurostile text-gray-300 leading-relaxed max-w-4xl mx-auto">

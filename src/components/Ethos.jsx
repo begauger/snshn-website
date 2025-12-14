@@ -3,13 +3,22 @@ import { Link } from 'react-router-dom';
 export default function Ethos() {
   return (
     <section className="py-20 px-6 bg-black">
+      <style jsx>{`
+        @font-face {
+          font-family: 'Pirulen';
+          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+        }
+      `}</style>
+      
       <div className="max-w-6xl mx-auto">
         <div className="relative bg-gradient-to-br from-zinc-800/40 to-zinc-900/60 backdrop-blur-sm rounded-2xl p-12 md:p-16 shadow-2xl">
           
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
           
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center" style={{ fontFamily: 'Pirulen, sans-serif' }}>
               The SNSHN Ethos
             </h2>
 
