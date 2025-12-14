@@ -101,25 +101,25 @@ export default function Hero() {
       </div>
       
       {/* Header Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-6 pt-32 mb-24">
-        <h1 className="text-5xl md:text-6xl font-eurostile font-bold mb-5 leading-tight tracking-tight text-white drop-shadow-2xl">
-          UPGRADE YOUR LIVING
+      <div className="relative z-10 max-w-5xl mx-auto text-center px-6 pt-24 mb-32">
+        <h1 className="text-5xl md:text-6xl font-eurostile font-bold mb-8 leading-tight text-white drop-shadow-2xl">
+          UPGRADE YOUR<br />LIVING
         </h1>
         
-        <p className="text-base md:text-lg font-eurostile text-white mb-8 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-lg">
-          The most comprehensive, effective, and enjoyable<br />way to elevate your property experience in Milwaukee
+        <p className="text-base md:text-lg font-eurostile text-white mb-10 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-lg">
+          The most comprehensive, effective, and enjoyable way to elevate your property<br />experience in Milwaukee
         </p>
         
         <a
           href="https://lease.snshn.co"
-          className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-medium px-8 py-3 rounded-full transition-all duration-300 text-sm tracking-wide"
+          className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300 text-base tracking-wide"
         >
           VIEW RENTALS
         </a>
       </div>
 
       {/* Infinite Horizontal Scrolling Cards */}
-      <div className="relative z-10 w-full overflow-hidden">
+      <div className="relative z-10 w-full overflow-hidden mt-8">
         <div 
           ref={scrollContainerRef}
           className="flex gap-8 overflow-x-hidden"
@@ -134,16 +134,16 @@ export default function Hero() {
               key={index}
               className="flex-shrink-0 w-[380px]"
             >
-              <div className="bg-zinc-900/90 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-xl flex items-center gap-6 transition-all duration-300 hover:scale-105 hover:border-yellow-400/30">
+              <div className="bg-zinc-900/90 backdrop-blur-sm border border-white/10 rounded-xl p-8 shadow-xl flex items-center gap-6 transition-all duration-300 hover:scale-105 hover:border-yellow-400/30 min-h-[220px]">
                 
                 {/* Left Side - Avatar and Info */}
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center mb-2">
-                    <span className="text-yellow-400 font-eurostile font-bold text-2xl">
+                <div className="flex flex-col items-center justify-center flex-shrink-0">
+                  <div className="w-20 h-20 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center mb-3">
+                    <span className="text-yellow-400 font-eurostile font-bold text-3xl">
                       {review.name.charAt(0)}
                     </span>
                   </div>
-                  <h4 className="font-eurostile font-semibold text-white text-xs text-center whitespace-nowrap">
+                  <h4 className="font-eurostile font-semibold text-white text-sm text-center whitespace-nowrap">
                     {review.name}, {review.age}
                   </h4>
                   <p className="font-eurostile text-gray-400 text-xs text-center">
@@ -152,29 +152,29 @@ export default function Hero() {
                 </div>
 
                 {/* Right Side - Quote and Metrics */}
-                <div className="flex-1">
-                  <p className="font-eurostile text-gray-300 text-xs mb-4 leading-relaxed italic">
+                <div className="flex-1 flex flex-col justify-between">
+                  <p className="font-eurostile text-gray-300 text-sm mb-5 leading-relaxed italic">
                     "{review.quote}"
                   </p>
 
                   {/* Metrics in Row */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-4">
                     
                     {/* Property Quality */}
                     <div>
                       <p className="font-eurostile text-xs text-gray-400 uppercase tracking-wider mb-1 text-center">
                         Quality
                       </p>
-                      <p className="font-eurostile text-xl font-bold text-yellow-400 text-center mb-1">
+                      <p className="font-eurostile text-xl font-bold text-yellow-400 text-center mb-2">
                         {review.rating.toFixed(1)}
                       </p>
-                      <div className="relative h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="relative h-2 bg-zinc-800 rounded-full overflow-hidden">
                         <div 
                           className="absolute top-0 left-0 h-full bg-yellow-400 rounded-full transition-all duration-300"
                           style={{ width: `${(review.rating / 5) * 100}%` }}
                         ></div>
                       </div>
-                      <div className="flex justify-between text-xs font-eurostile text-gray-600 mt-0.5">
+                      <div className="flex justify-between text-xs font-eurostile text-gray-600 mt-1">
                         <span>0</span>
                         <span>5</span>
                       </div>
@@ -185,16 +185,16 @@ export default function Hero() {
                       <p className="font-eurostile text-xs text-gray-400 uppercase tracking-wider mb-1 text-center">
                         Tenure
                       </p>
-                      <p className="font-eurostile text-xl font-bold text-yellow-400 text-center mb-1">
+                      <p className="font-eurostile text-xl font-bold text-yellow-400 text-center mb-2">
                         {review.yearsWithSNSHN}yr
                       </p>
-                      <div className="relative h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="relative h-2 bg-zinc-800 rounded-full overflow-hidden">
                         <div 
                           className="absolute top-0 left-0 h-full bg-yellow-400 rounded-full transition-all duration-300"
                           style={{ width: `${Math.min((review.yearsWithSNSHN / 5) * 100, 100)}%` }}
                         ></div>
                       </div>
-                      <div className="flex justify-between text-xs font-eurostile text-gray-600 mt-0.5">
+                      <div className="flex justify-between text-xs font-eurostile text-gray-600 mt-1">
                         <span>0yr</span>
                         <span>5yr+</span>
                       </div>
