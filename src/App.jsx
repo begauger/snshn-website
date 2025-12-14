@@ -5,7 +5,9 @@ import Blog from './pages/Blog';
 import DIYAnalyzer from './pages/DIYAnalyzer';
 import About from './pages/About';
 import Leasing from './pages/Leasing';
-import ApprovalGuide from './pages/Approvalguide';
+import ApprovalGuide from './pages/ApprovalGuide';
+import Tenants from './pages/Tenants';
+import Manage from './pages/Manage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/leasing" element={<Leasing />} />
         <Route path="/approval-guide" element={<ApprovalGuide />} />
+        <Route path="/tenants" element={<Tenants />} />
+        <Route path="/manage" element={<Manage />} />
       </Routes>
     </Router>
   );

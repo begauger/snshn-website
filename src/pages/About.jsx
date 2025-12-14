@@ -17,26 +17,26 @@ export default function About() {
       
       <div className="pt-24 pb-16">
         
-        {/* Hero Banner with Logo and About Us Text */}
-        <div className="relative w-full h-64 mb-24">
+        <div className="relative w-full h-[400px] overflow-hidden">
           <img 
             src="/src/assets/images/snshnlogo4.png"
             alt="SNSHN"
-            className="w-full h-full object-contain px-6"
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 flex items-center px-12">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-eurostile font-bold text-yellow-400 uppercase tracking-wide">
+          <div className="absolute inset-0 bg-black/70"></div>
+          
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-wide drop-shadow-2xl" style={{ fontFamily: 'Pirulen, sans-serif', textShadow: '0 10px 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.8)' }}>
               ABOUT US
             </h1>
           </div>
         </div>
 
-        {/* Philosophy Section with Logo */}
-        <div className="max-w-5xl mx-auto px-6 mb-24">
+        <div className="max-w-5xl mx-auto px-6 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <img 
-                src="/src/assets/images/snshnlogo2.jpg"
+                src="/src/assets/images/snshnreallogo.png"
                 alt="SNSHN Logo"
                 className="w-full h-auto rounded-2xl"
               />
@@ -44,7 +44,7 @@ export default function About() {
             
             <div>
               <p className="font-eurostile text-yellow-400 uppercase text-sm tracking-wider mb-2">OUR PHILOSOPHY</p>
-              <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-pirulen font-bold text-white mb-6">
                 Where Modern Technology Meets Property Excellence
               </h2>
               <div className="space-y-4 text-gray-300 font-eurostile leading-relaxed">
@@ -59,11 +59,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* Core Values Section */}
         <div className="max-w-6xl mx-auto px-6 mb-24">
           <div className="text-center mb-16">
             <p className="font-eurostile text-yellow-400 uppercase text-sm tracking-wider mb-2">OUR CORE VALUES</p>
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-pirulen font-bold text-white">
               What Makes SNSHN Stand Out
             </h2>
           </div>
@@ -71,14 +70,11 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-12">
             
             <div className="text-center">
-              <div className="mb-6 overflow-hidden rounded-xl h-48 relative">
+              <div className="mb-6">
                 <img 
                   src="/src/assets/images/snshnhouse1.webp"
                   alt="Measure"
-                  className="w-full h-full object-cover"
-                  style={{
-                    transform: `translateY(${scrollY * 0.1}px)`
-                  }}
+                  className="w-full h-48 object-cover rounded-xl"
                 />
               </div>
               <h3 className="font-eurostile font-bold text-xl text-white mb-4 uppercase">MEASURE</h3>
@@ -118,7 +114,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Origin Story Section with Background Image */}
         <div className="relative w-full py-32 mb-24">
           <div className="absolute inset-0">
             <img 
@@ -131,7 +126,7 @@ export default function About() {
           
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
             <p className="font-eurostile text-yellow-400 uppercase text-sm tracking-wider mb-2">ORIGIN OF SNSHN</p>
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-4xl font-pirulen font-bold text-white mb-8">
               BUILT FOR THOSE WHO REFUSE TO SETTLE
             </h2>
             
@@ -149,11 +144,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* Future Section */}
         <div className="max-w-6xl mx-auto px-6 mb-24">
           <div className="text-center mb-16">
             <p className="font-eurostile text-yellow-400 uppercase text-sm tracking-wider mb-2">OUR FUTURE</p>
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-pirulen font-bold text-white">
               ELEVATING THE STANDARD OF PROPERTY MANAGEMENT
             </h2>
           </div>

@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Header() {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
       <style jsx>{`
@@ -26,24 +29,45 @@ export default function Header() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-10 ml-auto">
-            <Link 
-              to="/leasing" 
-              className="text-base font-eurostile text-white hover:text-yellow-400 transition-colors duration-200"
+            
+            <div 
+              className="relative group"
             >
-              Leasing
-            </Link>
-            <a 
-              href="#tenants" 
-              className="text-base font-eurostile text-white hover:text-yellow-400 transition-colors duration-200"
-            >
-              Tenants
-            </a>
-            <a 
-              href="#manage" 
-              className="text-base font-eurostile text-white hover:text-yellow-400 transition-colors duration-200"
-            >
-              Manage
-            </a>
+              <button className="text-base font-eurostile text-white hover:text-yellow-400 transition-colors duration-200 flex items-center gap-1">
+                Services
+                <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 w-48 bg-zinc-900 border border-white/10 rounded-xl shadow-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link 
+                  to="/leasing"
+                  className="block px-6 py-3 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200"
+                >
+                  Leasing
+                </Link>
+                <Link 
+                  to="/tenants"
+                  className="block px-6 py-3 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200"
+                >
+                  Tenants
+                </Link>
+                <Link 
+                  to="/manage"
+                  className="block px-6 py-3 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200"
+                >
+                  Manage
+                </Link>
+                <a 
+                  href="#rehab"
+                  className="block px-6 py-3 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200"
+                >
+                  Rehab
+                </a>
+              </div>
+            </div>
+
             <Link 
               to="/contact" 
               className="text-base font-eurostile text-white hover:text-yellow-400 transition-colors duration-200"
