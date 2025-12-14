@@ -61,6 +61,22 @@ export default function Header() {
                 <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
               </svg>
             </Link>
+
+            <a
+              href="https://sunshinemgmt.appfolio.com/oportal/users/log_in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-black rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+              title="Owner Login"
+            >
+              <svg 
+                className="w-6 h-6" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </a>
           </div>
 
           <button className="md:hidden text-white">

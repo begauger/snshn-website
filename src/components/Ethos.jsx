@@ -20,24 +20,24 @@ export default function Ethos() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-eurostile font-semibold px-12 py-4 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 text-base"
               >
                 Read Our Story
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-4 rounded-full transition-all duration-300 text-base"
               >
                 Contact Us
               </Link>
-              <a
-                href="#blog"
+              <Link
+                to="/blog"
                 className="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-eurostile font-semibold px-12 py-4 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 text-base"
               >
                 Visit Our Blog
-              </a>
+              </Link>
             </div>
           </div>
         </div>
