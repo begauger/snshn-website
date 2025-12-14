@@ -93,7 +93,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/mke.png" 
+          src="/src/assets/images/mke2.png" 
           alt="Milwaukee Background" 
           className="w-full h-full object-cover"
         />

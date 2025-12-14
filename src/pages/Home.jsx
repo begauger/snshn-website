@@ -3,7 +3,8 @@ import Hero from '../components/Hero';
 import Ethos from '../components/Ethos';
 import AvailableServices from '../components/AvailableServices';
 import OurResults from '../components/OurResults';
-import Services from '../components/Services';
+import ApproachSections from '../components/ApproachSections';
+import PremiumLocation from '../components/PremiumLocation';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -14,7 +15,8 @@ export default function Home() {
       <Ethos />
       <AvailableServices />
       <OurResults />
-      <Services />
+      <ApproachSections />
+      <PremiumLocation />
       <Footer />
     </div>
   );
