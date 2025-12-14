@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Ethos() {
   return (
     <section className="py-20 px-6 bg-black">
@@ -24,12 +26,12 @@ export default function Ethos() {
               >
                 Read Our Story
               </a>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-4 rounded-full transition-all duration-300 text-base"
               >
                 Contact Us
-              </a>
+              </Link>
               <a
                 href="#blog"
                 className="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-eurostile font-semibold px-12 py-4 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 text-base"

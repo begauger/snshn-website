@@ -7,7 +7,7 @@ export default function Contact() {
       <Header />
       
       <div className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-6 py-16">
+        <div className="max-w-6xl mx-auto px-6 py-16">
           
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-eurostile font-bold text-white mb-6 uppercase tracking-wide">
@@ -58,63 +58,153 @@ export default function Contact() {
 
           </div>
 
-          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10 mb-16">
-            <div className="grid md:grid-cols-2 gap-10">
-              
-              <div>
-                <h3 className="font-eurostile font-semibold text-white mb-4 uppercase text-sm tracking-wide">
-                  Mailing Address
-                </h3>
-                <p className="font-eurostile text-gray-300 leading-relaxed">
-                  SNSHN CO<br />
-                  PO Box 1136<br />
-                  Milwaukee, WI 53201-1136
-                </p>
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            
+            <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <h3 className="font-eurostile font-semibold text-white mb-4 uppercase text-sm tracking-wide">
+                Office Information
+              </h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-eurostile text-gray-400 text-xs uppercase mb-2">Mailing Address</h4>
+                  <p className="font-eurostile text-gray-300 leading-relaxed">
+                    SNSHN CO<br />
+                    PO Box 1136<br />
+                    Milwaukee, WI 53201-1136
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-eurostile text-gray-400 text-xs uppercase mb-2">Hours</h4>
+                  <div className="font-eurostile text-gray-300 space-y-1 text-sm">
+                    <p>Monday - Friday: 8am - 6pm</p>
+                    <p>Saturday: 10am - 4pm</p>
+                    <p>Sunday: Closed</p>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div>
-                <h3 className="font-eurostile font-semibold text-white mb-4 uppercase text-sm tracking-wide">
-                  Hours
-                </h3>
-                <div className="font-eurostile text-gray-300 space-y-1 text-sm">
-                  <p>Monday - Friday: 8am - 6pm</p>
-                  <p>Saturday: 10am - 4pm</p>
-                  <p>Sunday: Closed</p>
+            <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <h3 className="font-eurostile font-semibold text-white mb-4 uppercase text-sm tracking-wide">
+                When Calling
+              </h3>
+              <div className="space-y-3 text-lg">
+                <div className="font-eurostile text-gray-300">
+                  <span className="text-yellow-400 font-semibold">Press 1:</span> Maintenance and Work Orders
+                </div>
+                <div className="font-eurostile text-gray-300">
+                  <span className="text-yellow-400 font-semibold">Press 2:</span> Resident Operations
+                </div>
+                <div className="font-eurostile text-gray-300">
+                  <span className="text-yellow-400 font-semibold">Press 3:</span> Leasing
+                </div>
+                <div className="font-eurostile text-gray-300">
+                  <span className="text-yellow-400 font-semibold">Press 4:</span> Buying/Selling/Investing
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+            <h3 className="font-eurostile font-semibold text-white mb-8 uppercase text-sm tracking-wide text-center">
+              Send Us a Message
+            </h3>
+            
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-6">
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block font-eurostile text-gray-300 text-sm mb-2">
+                    First Name <span className="text-yellow-400">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    name="firstName"
+                    required
+                    className="w-full bg-black border border-white/20 rounded-lg px-4 py-3 font-eurostile text-white focus:border-yellow-400 focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block font-eurostile text-gray-300 text-sm mb-2">
+                    Last Name <span className="text-yellow-400">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    name="lastName"
+                    required
+                    className="w-full bg-black border border-white/20 rounded-lg px-4 py-3 font-eurostile text-white focus:border-yellow-400 focus:outline-none transition-colors"
+                  />
                 </div>
               </div>
 
-            </div>
-          </div>
+              <div>
+                <label className="block font-eurostile text-gray-300 text-sm mb-2">
+                  Email Address <span className="text-yellow-400">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  name="email"
+                  required
+                  className="w-full bg-black border border-white/20 rounded-lg px-4 py-3 font-eurostile text-white focus:border-yellow-400 focus:outline-none transition-colors"
+                />
+              </div>
 
-          <div className="bg-gradient-to-br from-zinc-900/40 to-zinc-950/60 border border-white/10 rounded-2xl p-10 mb-16">
-            <h3 className="font-eurostile font-semibold text-white mb-6 uppercase text-sm tracking-wide text-center">
-              When Calling
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-4 text-sm">
-              <div className="font-eurostile text-gray-300">
-                <span className="text-yellow-400 font-semibold">Press 1:</span> Maintenance and Work Orders
+              <div className="grid md:grid-cols-4 gap-6">
+                <div className="md:col-span-1">
+                  <label className="block font-eurostile text-gray-300 text-sm mb-2">
+                    Country
+                  </label>
+                  <select 
+                    name="country"
+                    className="w-full bg-black border border-white/20 rounded-lg px-4 py-3 font-eurostile text-white focus:border-yellow-400 focus:outline-none transition-colors"
+                  >
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="MX">Mexico</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div className="md:col-span-3">
+                  <label className="block font-eurostile text-gray-300 text-sm mb-2">
+                    Phone Number <span className="text-yellow-400">*</span>
+                  </label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="+1"
+                    required
+                    className="w-full bg-black border border-white/20 rounded-lg px-4 py-3 font-eurostile text-white focus:border-yellow-400 focus:outline-none transition-colors"
+                  />
+                </div>
               </div>
-              <div className="font-eurostile text-gray-300">
-                <span className="text-yellow-400 font-semibold">Press 2:</span> Resident Operations
-              </div>
-              <div className="font-eurostile text-gray-300">
-                <span className="text-yellow-400 font-semibold">Press 3:</span> Leasing
-              </div>
-              <div className="font-eurostile text-gray-300">
-                <span className="text-yellow-400 font-semibold">Press 4:</span> Buying/Selling/Investing
-              </div>
-            </div>
-          </div>
 
-          <div className="text-center">
-            <a
-              href="https://wa.me/2627355989"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-5 rounded-full transition-all duration-300 text-base uppercase tracking-wide"
-            >
-              Message Us on WhatsApp
-            </a>
+              <div>
+                <label className="block font-eurostile text-gray-300 text-sm mb-2">
+                  Message <span className="text-yellow-400">*</span>
+                </label>
+                <textarea 
+                  name="message"
+                  rows="5"
+                  required
+                  className="w-full bg-black border border-white/20 rounded-lg px-4 py-3 font-eurostile text-white focus:border-yellow-400 focus:outline-none transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-16 py-4 rounded-lg transition-all duration-300 text-base uppercase tracking-wide"
+                >
+                  SUBMIT
+                </button>
+              </div>
+
+              <p className="text-xs font-eurostile text-gray-400 leading-relaxed mt-6">
+                By clicking Submit, I agree to receive recurring informational SMS, MMS, or Email messages from SNSHN. I authorize you to send me text messages on my mobile phone or landline. I understand that consenting to receive SMS messages is not a condition of purchase or service. This is a standard rate subscription service available on most carriers, Msg and Data Rates May Apply. Service will continue until customer cancels. Messaging frequency may vary. Subscriptions may be cancelled by texting STOP. You may request additional information by texting HELP or emailing team@snshn.co
+              </p>
+
+            </form>
           </div>
 
         </div>
