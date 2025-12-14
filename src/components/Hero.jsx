@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const scrollContainerRef = useRef(null);
@@ -98,7 +99,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/mke.png" 
+          src="/src/assets/images/mke2.png" 
           alt="Milwaukee Background" 
           className="w-full h-full object-cover"
         />
@@ -114,12 +115,12 @@ export default function Hero() {
           The most comprehensive, effective, and enjoyable way to elevate your property<br />experience in Milwaukee
         </p>
         
-        <a
-          href="https://lease.snshn.co"
+        <Link
+          to="/leasing"
           className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300 text-base tracking-wide"
         >
           VIEW RENTALS
-        </a>
+        </Link>
       </div>
 
       <div className="relative z-10 w-full overflow-hidden mt-8">

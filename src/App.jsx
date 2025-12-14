@@ -5,9 +5,10 @@ import Blog from './pages/Blog';
 import DIYAnalyzer from './pages/DIYAnalyzer';
 import About from './pages/About';
 import Leasing from './pages/Leasing';
-import ApprovalGuide from './pages/ApprovalGuide';
+import ApprovalGuide from './pages/Approvalguide';
 import Tenants from './pages/Tenants';
 import Manage from './pages/Manage';
+import Rehab from './pages/Rehab';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/approval-guide" element={<ApprovalGuide />} />
         <Route path="/tenants" element={<Tenants />} />
         <Route path="/manage" element={<Manage />} />
+        <Route path="/rehab" element={<Rehab />} />
       </Routes>
     </Router>
   );

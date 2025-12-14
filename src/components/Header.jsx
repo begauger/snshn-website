@@ -19,7 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/src/assets/images/snshntransparent.png" 
+              src="/src/assets/images/snshnreallogo.png" 
               alt="SNSHN Logo" 
               className="w-10 h-10 object-contain"
             />
@@ -59,12 +59,12 @@ export default function Header() {
                 >
                   Manage
                 </Link>
-                <a 
-                  href="#rehab"
+                <Link 
+                  to="/rehab"
                   className="block px-6 py-3 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200"
                 >
                   Rehab
-                </a>
+                </Link>
               </div>
             </div>
 
