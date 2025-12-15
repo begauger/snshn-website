@@ -87,34 +87,33 @@ export default function Hero() {
   }, [reviews.length]);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pb-16">
-      <style jsx>{`
-        @font-face {
-          font-family: 'Pirulen';
-          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
-          font-weight: normal;
-          font-style: normal;
-        }
-      `}</style>
-
+    <section className="relative min-h-screen pb-16 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/src/assets/images/mke2.png" 
-          alt="Milwaukee Background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <img
+  src={new URL('/mke2.png', import.meta.url).href}
+  alt="Milwaukee Background"
+  className="w-full h-full object-cover"
+/>
+
+        <div className="absolute inset-0 bg-black/60" />
       </div>
-      
-      <div className="relative z-10 max-w-5xl mx-auto text-center px-6 pt-24 mb-32">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white drop-shadow-2xl" style={{ fontFamily: 'Pirulen, sans-serif' }}>
+
+      {/* Hero Content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1
+          className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white drop-shadow-2xl"
+          style={{ fontFamily: 'Pirulen, sans-serif' }}
+        >
           UPGRADE YOUR<br />LIVING
         </h1>
-        
+
         <p className="text-base md:text-lg font-eurostile text-white mb-10 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-lg">
-          The most comprehensive, effective, and enjoyable way to elevate your property<br />experience in Milwaukee
+          The most comprehensive, effective, and enjoyable way to elevate your property
+          <br />
+          experience in Milwaukee
         </p>
-        
+
         <Link
           to="/leasing"
           className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300 text-base tracking-wide"
@@ -123,22 +122,19 @@ export default function Hero() {
         </Link>
       </div>
 
+      {/* Reviews Carousel */}
       <div className="relative z-10 w-full overflow-hidden mt-8">
-        <div 
+        <div
           ref={scrollContainerRef}
-          className="flex gap-8 overflow-x-hidden"
-          style={{ 
+          className="flex gap-8 overflow-x-hidden px-8"
+          style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
           }}
         >
           {[...reviews, ...reviews, ...reviews].map((review, index) => (
-            <div 
-              key={index}
-              className="flex-shrink-0 w-[380px]"
-            >
+            <div key={index} className="flex-shrink-0 w-[380px]">
               <div className="bg-zinc-900/90 backdrop-blur-sm border border-white/10 rounded-xl p-8 shadow-xl flex items-center gap-6 transition-all duration-300 hover:scale-105 hover:border-yellow-400/30 min-h-[220px]">
-                
                 <div className="flex flex-col items-center justify-center flex-shrink-0">
                   <div className="w-20 h-20 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center mb-3">
                     <span className="text-yellow-400 font-eurostile font-bold text-3xl">
@@ -159,7 +155,6 @@ export default function Hero() {
                   </p>
 
                   <div className="grid grid-cols-2 gap-4">
-                    
                     <div>
                       <p className="font-eurostile text-xs text-gray-400 uppercase tracking-wider mb-1 text-center">
                         Quality
@@ -168,14 +163,10 @@ export default function Hero() {
                         {review.rating.toFixed(1)}
                       </p>
                       <div className="relative h-2 bg-zinc-800 rounded-full overflow-hidden">
-                        <div 
-                          className="absolute top-0 left-0 h-full bg-yellow-400 rounded-full transition-all duration-300"
+                        <div
+                          className="absolute top-0 left-0 h-full bg-yellow-400 rounded-full"
                           style={{ width: `${(review.rating / 5) * 100}%` }}
-                        ></div>
-                      </div>
-                      <div className="flex justify-between text-xs font-eurostile text-gray-600 mt-1">
-                        <span>0</span>
-                        <span>5</span>
+                        />
                       </div>
                     </div>
 
@@ -187,30 +178,22 @@ export default function Hero() {
                         {review.yearsWithSNSHN}yr
                       </p>
                       <div className="relative h-2 bg-zinc-800 rounded-full overflow-hidden">
-                        <div 
-                          className="absolute top-0 left-0 h-full bg-yellow-400 rounded-full transition-all duration-300"
-                          style={{ width: `${Math.min((review.yearsWithSNSHN / 5) * 100, 100)}%` }}
-                        ></div>
-                      </div>
-                      <div className="flex justify-between text-xs font-eurostile text-gray-600 mt-1">
-                        <span>0yr</span>
-                        <span>5yr+</span>
+                        <div
+                          className="absolute top-0 left-0 h-full bg-yellow-400 rounded-full"
+                          style={{
+                            width: `${Math.min((review.yearsWithSNSHN / 5) * 100, 100)}%`
+                          }}
+                        />
                       </div>
                     </div>
-
                   </div>
+
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 }
