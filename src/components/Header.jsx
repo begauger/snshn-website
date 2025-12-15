@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/images/snshnreallogo.png" 
+              src="/snshnreallogo.png" 
               alt="SNSHN Logo" 
               className="w-10 h-10 object-contain"
             />
