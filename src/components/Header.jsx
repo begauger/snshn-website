@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Header() {
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
@@ -19,7 +20,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/src/assets/images/snshnreallogo.png" 
+              src="/src/images/snshnreallogo.png" 
               alt="SNSHN Logo" 
               className="w-10 h-10 object-contain"
             />
