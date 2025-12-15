@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
@@ -28,6 +29,7 @@ export default function Header() {
             </h1>
           </Link>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10 ml-auto">
             
             <div 
@@ -112,12 +114,97 @@ export default function Header() {
             </a>
           </div>
 
-          <button className="md:hidden text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          {/* Mobile Hamburger Button */}
+          <button 
+            className="md:hidden text-white z-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-3">
+            <div className="space-y-2">
+              <p className="text-sm font-eurostile text-yellow-400 px-4">Services</p>
+              <Link 
+                to="/leasing"
+                className="block px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Leasing
+              </Link>
+              <Link 
+                to="/tenants"
+                className="block px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Tenants
+              </Link>
+              <Link 
+                to="/manage"
+                className="block px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Manage
+              </Link>
+              <Link 
+                to="/rehab"
+                className="block px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Rehab
+              </Link>
+            </div>
+            
+            <Link 
+              to="/contact" 
+              className="block px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link 
+              to="/blog" 
+              className="block px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            
+            <Link
+              to="/diy-analyzer"
+              className="flex items-center px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+              </svg>
+              DIY Analyzer
+            </Link>
+
+            <a
+              href="https://sunshinemgmt.appfolio.com/oportal/users/log_in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center px-4 py-2 font-eurostile text-white hover:bg-yellow-400 hover:text-black transition-all duration-200 rounded"
+            >
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+              Owner Login
+            </a>
+          </div>
+        )}
       </nav>
     </header>
   );
