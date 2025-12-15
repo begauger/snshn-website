@@ -12,6 +12,8 @@ import Rehab from './pages/Rehab';
 import Team from './pages/Team';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ScrollToTop from './components/ScrollToTop';
+import Terms from './pages/Terms';
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
         <Route path="/rehab" element={<Rehab />} />
         <Route path="/team" element={<Team />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<Terms />} />
       </Routes>
     </Router>
   );
