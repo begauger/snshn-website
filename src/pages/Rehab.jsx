@@ -8,24 +8,24 @@ export default function Rehab() {
 
   const beforeAfterSlides = [
     {
-      before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      title: "Complete Kitchen Remodel"
+      before: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1200&q=80",
+      after: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80",
+      title: "Complete Roofing Replacement"
     },
     {
-      before: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80",
-      title: "Bathroom Restoration"
+      before: "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?w=1200&q=80",
+      after: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=80",
+      title: "Siding & Exterior Renovation"
     },
     {
-      before: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      title: "Exterior Siding & Paint"
+      before: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+      after: "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?w=1200&q=80",
+      title: "Full Kitchen Remodel"
     },
     {
-      before: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80",
-      title: "Living Space Renovation"
+      before: "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=1200&q=80",
+      after: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80",
+      title: "Complete HVAC System Install"
     }
   ];
 
