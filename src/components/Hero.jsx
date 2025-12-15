@@ -91,7 +91,7 @@ export default function Hero() {
       <style jsx>{`
         @font-face {
           font-family: 'Pirulen';
-          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
+          src: url('/fonts/pirulenrg.woff') format('woff');
           font-weight: normal;
           font-style: normal;
         }

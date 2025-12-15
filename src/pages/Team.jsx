@@ -44,8 +44,7 @@ export default function Team() {
             <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/src/assets/images/annasnshn.webp"
-
+                  src="/images/annasnshn.webp"
                   alt="Anna Cihla"
                   className="w-full h-full object-cover"
                 />
@@ -82,8 +81,8 @@ export default function Team() {
             <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <img 
-                  src="/src/assets/images/tiffanysnshn.webp"
-                alt="Tiffany Pfeilsticker"
+                  src="/images/tiffanysnshn.webp"
+                  alt="Tiffany Pfeilsticker"
                   className="w-full h-full object-cover"
                 />
               </div>

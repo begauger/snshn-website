@@ -2,15 +2,14 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Header() {
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
       <style jsx>{`
         @font-face {
           font-family: 'Pirulen';
-          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
+          src: url('/fonts/pirulenrg.woff') format('woff');
           font-weight: normal;
           font-style: normal;
         }
@@ -20,7 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/snshnreallogo.png" 
+              src="/images/snshnreallogo.png" 
               alt="SNSHN Logo" 
               className="w-10 h-10 object-contain"
             />
