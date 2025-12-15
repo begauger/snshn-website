@@ -68,6 +68,13 @@ export default function Ethos() {
           >
             Read Our Story
           </Link>
+          <Link
+            to="/team"
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-block bg-zinc-900 hover:bg-zinc-800 text-white border border-yellow-400 font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300 text-center"
+          >
+            Meet Our Team
+          </Link>
           <a
             href="https://www.google.com/search?sca_esv=a0bb12506671175f&rlz=1C1RXQR_enUS1176US1176&sxsrf=AE3TifNYxU3t3mCqDzruhotIVt54ZE_R3A:1765745174149&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1e3EgCjtcw_xsTMfTotAloZApz1SMFRaGhW-mlQt4zRPvqd8MMjHB4HE73EK_OSSoUw8R0yC_qK5G8WIlk1SeQPFnlmWB27FfWRrajtLAoXCpl1yfT51kdWoeXb6PeFIyvAAPk%3D&q=SNSHN+Management+%26+Realty+-+Milwaukee+Reviews&sa=X&ved=2ahUKEwiHzfmu-b2RAxVwM0QIHU0nBNEQ0bkNegQIJxAE&biw=1920&bih=945&dpr=1"
             target="_blank"

@@ -107,7 +107,7 @@ export default function Hero() {
       </div>
       
       <div className="relative z-10 max-w-5xl mx-auto text-center px-6 pt-24 mb-32">
-        <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-white drop-shadow-2xl" style={{ fontFamily: 'Pirulen, sans-serif' }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white drop-shadow-2xl" style={{ fontFamily: 'Pirulen, sans-serif' }}>
           UPGRADE YOUR<br />LIVING
         </h1>
         

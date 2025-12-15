@@ -5,10 +5,13 @@ import Blog from './pages/Blog';
 import DIYAnalyzer from './pages/DIYAnalyzer';
 import About from './pages/About';
 import Leasing from './pages/Leasing';
-import ApprovalGuide from './pages/Approvalguide';
+import ApprovalGuide from './pages/ApprovalGuide';
 import Tenants from './pages/Tenants';
 import Manage from './pages/Manage';
 import Rehab from './pages/Rehab';
+import Team from './pages/Team';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <Route path="/tenants" element={<Tenants />} />
         <Route path="/manage" element={<Manage />} />
         <Route path="/rehab" element={<Rehab />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );
