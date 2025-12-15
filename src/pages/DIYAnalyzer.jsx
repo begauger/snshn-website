@@ -25,7 +25,7 @@ export default function DIYAnalyzer() {
             {/* Left Side - Image */}
             <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex items-center justify-center">
               <img 
-                src="/analyzer.png"
+                src="/src/assets/images/analyzer.png"
                 alt="Property Damage Assessment AI"
                 className="w-full h-auto rounded-lg"
               />

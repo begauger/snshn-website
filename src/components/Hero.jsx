@@ -91,7 +91,7 @@ export default function Hero() {
       <style jsx>{`
         @font-face {
           font-family: 'Pirulen';
-          src: url('/fonts/pirulenrg.woff') format('woff');
+          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
           font-weight: normal;
           font-style: normal;
         }
@@ -99,7 +99,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/mke2.png" 
+          src="/src/assets/images/mke2.png" 
           alt="Milwaukee Background" 
           className="w-full h-full object-cover"
         />

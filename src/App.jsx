@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
@@ -11,13 +10,12 @@ import Tenants from './pages/Tenants';
 import Manage from './pages/Manage';
 import Rehab from './pages/Rehab';
 import Team from './pages/Team';
-import TermsOfService from './pages/TermsOfService';
+import TermsOfService from './pages/TermsofService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

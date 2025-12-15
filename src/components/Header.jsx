@@ -9,7 +9,7 @@ export default function Header() {
       <style jsx>{`
         @font-face {
           font-family: 'Pirulen';
-          src: url('/fonts/pirulenrg.woff') format('woff');
+          src: url('/src/assets/fonts/pirulenrg.woff') format('woff');
           font-weight: normal;
           font-style: normal;
         }
@@ -19,7 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/snshnreallogo.png" 
+              src="/src/assets/images/snshnreallogo.png" 
               alt="SNSHN Logo" 
               className="w-10 h-10 object-contain"
             />
