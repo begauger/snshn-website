@@ -10,228 +10,112 @@ export default function ApprovalGuide() {
         
         <div className="text-center py-16 px-6 bg-gradient-to-b from-zinc-900 to-black">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-wide mb-6" style={{ fontFamily: 'Pirulen, sans-serif' }}>
-            APPLICATION GUIDE
+            APPROVAL GUIDE
           </h1>
           <p className="text-lg md:text-xl font-eurostile text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Everything you need to know about applying and moving into your new home
+            Everything you need to know about our application process
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10 mb-16">
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-6">
-              Rental Application Criteria
-            </h2>
+        <div className="max-w-4xl mx-auto px-6 py-16">
+          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 space-y-12">
             
-            <p className="font-eurostile text-gray-300 mb-8 leading-relaxed">
-              Once you have a home picked out and are ready to apply, please watch the video below to help explain our approval criteria. The process usually takes 1-3 days on average, however, can take longer if we are unable to verify income or rental history.
-            </p>
-
-            <div className="mb-8 bg-black/50 border border-white/20 rounded-xl aspect-video flex items-center justify-center">
-              <p className="font-eurostile text-gray-400">
-                [Rental Application Video Placeholder]
-              </p>
-            </div>
-
-            <div className="space-y-4 mb-8">
-              <h3 className="font-eurostile font-semibold text-yellow-400 text-lg mb-4">
-                Application Criteria and Considerations:
-              </h3>
-              
-              <div className="space-y-3">
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    Net income should be greater than 3x rental amount (4x rental amount for group applications)
+            <div>
+              <h2 className="text-3xl font-eurostile font-bold text-yellow-400 mb-6">Application Requirements</h2>
+              <div className="space-y-6">
+                <div className="bg-black/30 rounded-xl p-6 border border-white/5">
+                  <h3 className="text-xl font-eurostile font-semibold text-white mb-3">Income Verification</h3>
+                  <p className="font-eurostile text-gray-300 leading-relaxed mb-3">
+                    Household income should be at least 3 times the monthly rent.
                   </p>
+                  <ul className="list-disc list-inside space-y-2 font-eurostile text-gray-400">
+                    <li>Recent pay stubs (last 2 months)</li>
+                    <li>Tax returns or W-2 forms</li>
+                    <li>Bank statements</li>
+                    <li>Employment verification letter</li>
+                  </ul>
                 </div>
 
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    Income documents should be clear to read and understand
+                <div className="bg-black/30 rounded-xl p-6 border border-white/5">
+                  <h3 className="text-xl font-eurostile font-semibold text-white mb-3">Credit & Background</h3>
+                  <p className="font-eurostile text-gray-300 leading-relaxed mb-3">
+                    We conduct thorough screening to ensure quality tenancy.
                   </p>
+                  <ul className="list-disc list-inside space-y-2 font-eurostile text-gray-400">
+                    <li>Credit check (minimum score varies by property)</li>
+                    <li>Criminal background check</li>
+                    <li>Eviction history review</li>
+                    <li>Rental history verification</li>
+                  </ul>
                 </div>
 
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    Credit score should be greater than 600 (average credit greater than 600 for group applications)
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    Bankruptcy within the past 5 years or unpaid judgements greater than $5k will be denied
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    Rental history should be verifiable; no outstanding balances or evictions in the last 5 years
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    All adult occupants must apply
-                  </p>
-                </div>
-
-                <div className="flex gap-3">
-                  <svg className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-eurostile text-gray-300">
-                    Deceptive, missing, or unverifiable information are common reasons for denial or cancelation. Please use accurate and complete information.
+                <div className="bg-black/30 rounded-xl p-6 border border-white/5">
+                  <h3 className="text-xl font-eurostile font-semibold text-white mb-3">References</h3>
+                  <p className="font-eurostile text-gray-300 leading-relaxed">
+                    Please provide contact information for previous landlords and personal or professional references.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="border-t border-white/10 pt-8">
+              <h2 className="text-3xl font-eurostile font-bold text-yellow-400 mb-6">Move-In Costs</h2>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-4 bg-black/30 rounded-xl border border-white/5">
+                  <span className="font-eurostile text-white font-semibold">First Month's Rent</span>
+                  <span className="font-eurostile text-yellow-400">Due at signing</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-black/30 rounded-xl border border-white/5">
+                  <span className="font-eurostile text-white font-semibold">Security Deposit</span>
+                  <span className="font-eurostile text-yellow-400">Equal to one month's rent</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-black/30 rounded-xl border border-white/5">
+                  <span className="font-eurostile text-white font-semibold">Application Fee</span>
+                  <span className="font-eurostile text-yellow-400">Non-refundable</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 pt-8">
+              <h2 className="text-3xl font-eurostile font-bold text-yellow-400 mb-6">Application Process</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-yellow-400 font-eurostile font-bold text-2xl">1</span>
+                  </div>
+                  <h3 className="font-eurostile font-semibold text-white mb-2">Submit Application</h3>
+                  <p className="font-eurostile text-gray-400 text-sm">Complete online application with required documents</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-yellow-400 font-eurostile font-bold text-2xl">2</span>
+                  </div>
+                  <h3 className="font-eurostile font-semibold text-white mb-2">Screening Review</h3>
+                  <p className="font-eurostile text-gray-400 text-sm">We review your application within 24-48 hours</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-yellow-400 font-eurostile font-bold text-2xl">3</span>
+                  </div>
+                  <h3 className="font-eurostile font-semibold text-white mb-2">Move In</h3>
+                  <p className="font-eurostile text-gray-400 text-sm">Sign lease and receive keys to your new home</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 pt-8 text-center">
+              <h2 className="text-2xl font-eurostile font-bold text-white mb-4">Ready to Apply?</h2>
+              <p className="font-eurostile text-gray-300 mb-6">
+                View our available properties and start your application today
+              </p>
               <a
                 href="/leasing"
-                className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-4 rounded-full transition-all duration-300"
+                className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300"
               >
-                Find Your Home Now!
+                View Available Properties
               </a>
             </div>
-          </div>
-        </div>
 
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="border-t border-white/10"></div>
-        </div>
-
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-6">
-              Preparing for Move-In
-            </h2>
-            
-            <p className="font-eurostile text-gray-300 mb-8 leading-relaxed">
-              Congratulations, you have been approved! Please watch the video below to outline the required tasks in your Pre-Move-In Checklist. We encourage you to sign your lease as soon as possible and submit your security deposit so we can remove your new home from our available listings.
-            </p>
-
-            <div className="mb-10 bg-black/50 border border-white/20 rounded-xl aspect-video flex items-center justify-center">
-              <p className="font-eurostile text-gray-400">
-                [Pre-Move-In Video Placeholder]
-              </p>
-            </div>
-
-            <h3 className="font-eurostile font-semibold text-yellow-400 text-lg mb-6">
-              Here is what comes next before we can officially welcome you home:
-            </h3>
-
-            <div className="space-y-8">
-              
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="font-eurostile font-bold text-black text-xl">1</span>
-                </div>
-                <div>
-                  <h4 className="font-eurostile font-bold text-white text-xl mb-2">Sign Your Lease</h4>
-                  <p className="font-eurostile text-gray-300">
-                    Check your email for a link to AppFolio, where you can review and sign your lease anytime.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="font-eurostile font-bold text-black text-xl">2</span>
-                </div>
-                <div>
-                  <h4 className="font-eurostile font-bold text-white text-xl mb-2">Explore the App</h4>
-                  <p className="font-eurostile text-gray-300">
-                    Use your tenant portal to pay rent, view charges, and submit maintenance requests.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="font-eurostile font-bold text-black text-xl">3</span>
-                </div>
-                <div>
-                  <h4 className="font-eurostile font-bold text-white text-xl mb-2">Pay Deposits & Fees</h4>
-                  <p className="font-eurostile text-gray-300 mb-3">
-                    Security deposits must be paid via <strong>money order</strong> made out to <strong>SNSHN</strong>. Rent and other fees can be paid through the app. Pet deposits apply if you are bringing a furry friend.
-                  </p>
-                  <a
-                    href="https://snshnapps.com/appointments"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-eurostile font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 text-sm"
-                  >
-                    Schedule Deposit Dropoff
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="font-eurostile font-bold text-black text-xl">4</span>
-                </div>
-                <div>
-                  <h4 className="font-eurostile font-bold text-white text-xl mb-2">Submit Renters Insurance</h4>
-                  <p className="font-eurostile text-gray-300 mb-3">
-                    Provide proof of your own policy before move-in, or we will auto-enroll you in our $15/month liability plan.
-                  </p>
-                  <a
-                    href="https://snshnapps.com/renters-insurance"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-eurostile font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 text-sm"
-                  >
-                    Update Renters Insurance
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="font-eurostile font-bold text-black text-xl">5</span>
-                </div>
-                <div>
-                  <h4 className="font-eurostile font-bold text-white text-xl mb-2">Coordinate Key Pick-Up</h4>
-                  <p className="font-eurostile text-gray-300 mb-3">
-                    Keys are placed in a lockbox outside our office on your move-in day. We will text you the code! If needed, we will reach out to coordinate another method.
-                  </p>
-                  <a
-                    href="https://snshnapps.com/key-pickup"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-eurostile font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 text-sm"
-                  >
-                    Schedule Key Pick Up
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <div className="mt-10 p-6 bg-black/30 border border-yellow-400/30 rounded-xl">
-              <p className="font-eurostile text-gray-300 text-center">
-                Questions? Reach out to your leasing agent or message our virtual assistant.
-              </p>
-            </div>
           </div>
         </div>
 
