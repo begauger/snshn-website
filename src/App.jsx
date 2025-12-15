@@ -11,10 +11,12 @@ import Manage from './pages/Manage';
 import Rehab from './pages/Rehab';
 import Team from './pages/Team';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+          <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
