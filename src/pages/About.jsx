@@ -19,7 +19,7 @@ export default function About() {
         
         <div className="relative w-full h-[400px] overflow-hidden">
           <img 
-            src="/src/assets/images/snshnlogo4.png"
+            src="/snshnlogo4.png"
             alt="SNSHN"
             className="w-full h-full object-cover opacity-30"
           />
@@ -36,7 +36,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <img 
-                src="/src/assets/images/snshnreallogo.png"
+                src="/snshnreallogo.png"
                 alt="SNSHN Logo"
                 className="w-full h-auto rounded-2xl"
               />
@@ -72,7 +72,7 @@ export default function About() {
             <div className="text-center">
               <div className="mb-6">
                 <img 
-                  src="/src/assets/images/snshnhouse1.webp"
+                  src="/snshnhouse1.webp"
                   alt="Measure"
                   className="w-full h-48 object-cover rounded-xl"
                 />
@@ -86,7 +86,7 @@ export default function About() {
             <div className="text-center">
               <div className="mb-6">
                 <img 
-                  src="/src/assets/images/snshnhouse2.webp"
+                  src="/snshnhouse2.webp"
                   alt="Optimize"
                   className="w-full h-48 object-cover rounded-xl"
                 />
