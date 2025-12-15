@@ -27,7 +27,6 @@ function App() {
         <Route path="/manage" element={<Manage />} />
         <Route path="/rehab" element={<Rehab />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
