@@ -15,6 +15,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Terms from './pages/Terms';
 import PromiseToPayPage from './pages/PromiseToPayPage';
 import ResidentCoordinationPage from './pages/ResidentCoordinationPage';
+import TenantResourcesPage from './pages/TenantResourcesPage';
 
 
 
@@ -39,6 +40,8 @@ function App() {
         <Route path="/terms-of-service" element={<Terms />} />
         <Route path="/promise-to-pay" element={<PromiseToPayPage />} />
         <Route path="/resident-coordination" element={<ResidentCoordinationPage />} />
+        <Route path="/tenant-resources" element={<TenantResourcesPage />} />
+
 
 
 

@@ -8,75 +8,81 @@ export default function Leasing() {
   const properties = [
     {
       id: 1,
-      title: "Modern Downtown Loft",
-      address: "123 Main St, Milwaukee, WI 53202",
-      price: 1850,
+      title: "1038 Fond du Lac Ave, Unit 201",
+      address: "1038 Fond du Lac Ave, Unit 201, Kewaskum, WI 53040",
+      price: 1095,
       beds: 2,
-      baths: 2,
-      sqft: 1200,
-      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
-      available: "Available Now",
-      type: "apartment"
+      baths: 1,
+      sqft: 2,
+      image: "https://images.cdn.appfolio.com/sunshinemgmt/images/29086abc-a210-4f2a-88de-103a76aa1151/medium.jpeg",
+      available: "Available 3/14/26",
+      type: "apartment",
+      link: "https://sunshinemgmt.appfolio.com/listings/detail/f3e78494-63ed-42e1-9c94-b349481182d5"
     },
     {
       id: 2,
-      title: "Spacious Family Home",
-      address: "456 Oak Avenue, Wauwatosa, WI 53213",
-      price: 2400,
-      beds: 4,
-      baths: 3,
-      sqft: 2100,
+      title: "Property 2",
+      address: "Coming Soon",
+      price: 0,
+      beds: 0,
+      baths: 0,
+      sqft: 0,
       image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",
-      available: "Available Dec 1",
-      type: "house"
+      available: "Coming Soon",
+      type: "apartment",
+      link: null
     },
     {
       id: 3,
-      title: "Bay View Studio",
-      address: "789 South Shore Dr, Milwaukee, WI 53207",
-      price: 1100,
-      beds: 1,
-      baths: 1,
-      sqft: 650,
+      title: "Property 3",
+      address: "Coming Soon",
+      price: 0,
+      beds: 0,
+      baths: 0,
+      sqft: 0,
       image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-      available: "Available Now",
-      type: "studio"
+      available: "Coming Soon",
+      type: "apartment",
+      link: null
     },
     {
       id: 4,
-      title: "East Side Classic",
-      address: "321 North Ave, Milwaukee, WI 53202",
-      price: 1650,
-      beds: 3,
-      baths: 2,
-      sqft: 1450,
+      title: "Property 4",
+      address: "Coming Soon",
+      price: 0,
+      beds: 0,
+      baths: 0,
+      sqft: 0,
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
-      available: "Available Jan 15",
-      type: "apartment"
+      available: "Coming Soon",
+      type: "apartment",
+      link: null
     },
     {
       id: 5,
-      title: "Luxury Penthouse",
-      address: "555 Water St, Milwaukee, WI 53202",
-      price: 3200,
-      beds: 3,
-      baths: 2.5,
-      sqft: 1800,
+      title: "Property 5",
+      address: "Coming Soon",
+      price: 0,
+      beds: 0,
+      baths: 0,
+      sqft: 0,
       image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-      available: "Available Now",
-      type: "apartment"
+      available: "Coming Soon",
+      type: "apartment",
+      link: null
     },
     {
       id: 6,
-      title: "Shorewood Duplex",
-      address: "888 Capitol Dr, Shorewood, WI 53211",
-      price: 1950,
-      beds: 2,
-      baths: 1.5,
-      sqft: 1100,
+      title: "Property 6",
+      address: "Coming Soon",
+      price: 0,
+      beds: 0,
+      baths: 0,
+      sqft: 0,
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-      available: "Available Feb 1",
-      type: "house"
+      available: "Coming Soon",
+      type: "apartment",
+      link: null
     }
   ];
 
@@ -168,9 +174,11 @@ export default function Leasing() {
                     alt={property.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-eurostile font-semibold text-sm">
-                    ${property.price}/mo
-                  </div>
+                  {property.price > 0 && (
+                    <div className="absolute top-4 right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-eurostile font-semibold text-sm">
+                      ${property.price}/mo
+                    </div>
+                  )}
                   <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-sm text-white px-4 py-2 rounded-full font-eurostile text-sm">
                     {property.available}
                   </div>
@@ -184,30 +192,40 @@ export default function Leasing() {
                     {property.address}
                   </p>
 
-                  <div className="flex items-center gap-6 mb-6 text-sm font-eurostile text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                      </svg>
-                      <span>{property.beds} Beds</span>
+                  {property.beds > 0 && (
+                    <div className="flex items-center gap-6 mb-6 text-sm font-eurostile text-gray-300">
+                      <div className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span>{property.beds} Beds</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>{property.baths} Baths</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <span>{property.baths} Baths</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                      </svg>
-                      <span>{property.sqft} sqft</span>
-                    </div>
-                  </div>
+                  )}
 
-                  <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold py-3 rounded-full transition-all duration-300">
-                    View Details
-                  </button>
+                  {property.link ? (
+                    <a
+                      href={property.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold py-3 rounded-full transition-all duration-300 text-center"
+                    >
+                      View Details
+                    </a>
+                  ) : (
+                    <button 
+                      disabled
+                      className="w-full bg-zinc-800 text-gray-500 font-eurostile font-semibold py-3 rounded-full cursor-not-allowed"
+                    >
+                      Coming Soon
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
