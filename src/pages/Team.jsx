@@ -163,6 +163,124 @@ export default function Team() {
           </div>
         </div>
 
+        {/* Meet More Team Members - Video Section */}
+        <div className="bg-black py-16">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Pirulen, sans-serif' }}>
+                MEET MORE OF OUR TEAM
+              </h2>
+              <p className="text-lg font-eurostile text-gray-300">
+                Get to know the people who make SNSHN exceptional
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Team Member 1 */}
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:border-yellow-400/50 cursor-pointer group">
+                <div className="relative aspect-video bg-zinc-800 overflow-hidden">
+                  <video 
+                    className="w-full h-full object-cover"
+                    poster="/team-member-1-thumbnail.jpg"
+                    onClick={(e) => {
+                      if (e.currentTarget.paused) {
+                        e.currentTarget.play();
+                      } else {
+                        e.currentTarget.pause();
+                      }
+                    }}
+                  >
+                    <source src="/team-member-1-video.mp4" type="video/mp4" />
+                  </video>
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-all duration-300">
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-eurostile font-bold text-yellow-400 mb-2">Team Member Name</h3>
+                  <p className="text-base font-eurostile text-gray-400 mb-3">Position Title</p>
+                  <p className="font-eurostile text-gray-300 text-sm leading-relaxed">
+                    Brief description about this team member and their role at SNSHN.
+                  </p>
+                </div>
+              </div>
+
+              {/* Team Member 2 */}
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:border-yellow-400/50 cursor-pointer group">
+                <div className="relative aspect-video bg-zinc-800 overflow-hidden">
+                  <video 
+                    className="w-full h-full object-cover"
+                    poster="/team-member-2-thumbnail.jpg"
+                    onClick={(e) => {
+                      if (e.currentTarget.paused) {
+                        e.currentTarget.play();
+                      } else {
+                        e.currentTarget.pause();
+                      }
+                    }}
+                  >
+                    <source src="/team-member-2-video.mp4" type="video/mp4" />
+                  </video>
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-all duration-300">
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-eurostile font-bold text-yellow-400 mb-2">Team Member Name</h3>
+                  <p className="text-base font-eurostile text-gray-400 mb-3">Position Title</p>
+                  <p className="font-eurostile text-gray-300 text-sm leading-relaxed">
+                    Brief description about this team member and their role at SNSHN.
+                  </p>
+                </div>
+              </div>
+
+              {/* Team Member 3 */}
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:border-yellow-400/50 cursor-pointer group">
+                <div className="relative aspect-video bg-zinc-800 overflow-hidden">
+                  <video 
+                    className="w-full h-full object-cover"
+                    poster="/team-member-3-thumbnail.jpg"
+                    onClick={(e) => {
+                      if (e.currentTarget.paused) {
+                        e.currentTarget.play();
+                      } else {
+                        e.currentTarget.pause();
+                      }
+                    }}
+                  >
+                    <source src="/team-member-3-video.mp4" type="video/mp4" />
+                  </video>
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-all duration-300">
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-eurostile font-bold text-yellow-400 mb-2">Team Member Name</h3>
+                  <p className="text-base font-eurostile text-gray-400 mb-3">Position Title</p>
+                  <p className="font-eurostile text-gray-300 text-sm leading-relaxed">
+                    Brief description about this team member and their role at SNSHN.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       
       <Footer />
