@@ -61,7 +61,7 @@ export default function Tenants() {
             </a>
 
             <a
-              href="/promise-appeal-feedback"
+              href="/promise-to-pay"
               className="group bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-yellow-400/50 transition-all duration-300 hover:scale-105"
             >
               <div className="w-20 h-20 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -94,6 +94,30 @@ export default function Tenants() {
               </p>
             </a>
 
+          </div>
+        </div>
+
+        {/* Why SNSHN Section */}
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-8 text-center" style={{ fontFamily: 'Pirulen, sans-serif' }}>
+              WHY SNSHN?
+            </h2>
+            
+            <div className="aspect-video bg-black rounded-xl overflow-hidden">
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                poster="/why-snshn-thumbnail.jpg"
+              >
+                <source src="/why-snshn-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <p className="font-eurostile text-gray-300 text-center mt-6 leading-relaxed">
+              Discover what makes SNSHN the best choice for your rental experience
+            </p>
           </div>
         </div>
 

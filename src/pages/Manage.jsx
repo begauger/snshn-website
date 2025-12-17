@@ -199,20 +199,27 @@ export default function Manage() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <div className="bg-gradient-to-br from-zinc-900/40 to-zinc-950/60 border border-white/10 rounded-2xl p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-6">
-              Ready to Learn More?
+        {/* Why SNSHN Video Section */}
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+            <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-8 text-center" style={{ fontFamily: 'Pirulen, sans-serif' }}>
+              WHY SNSHN?
             </h2>
-            <p className="font-eurostile text-gray-300 mb-8 leading-relaxed">
-              Are you an owner (or hoping to be one soon) and want to hear about how SNSHN manages investments different than the rest? Reach out today!
+            
+            <div className="aspect-video bg-black rounded-xl overflow-hidden">
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                poster="/why-snshn-manage-thumbnail.jpg"
+              >
+                <source src="/why-snshn-manage-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <p className="font-eurostile text-gray-300 text-center mt-6 leading-relaxed">
+              Discover how SNSHN manages investments differently than the rest
             </p>
-            <a
-              href="/contact"
-              className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-4 rounded-full transition-all duration-300"
-            >
-              Contact Us
-            </a>
           </div>
         </div>
 
