@@ -1,14 +1,40 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const scrollContainerRef = useRef(null);
+  const [backgroundImage, setBackgroundImage] = useState('');
+
+  // Determine which background image to show based on time
+  useEffect(() => {
+    const updateBackgroundImage = () => {
+      const currentHour = new Date().getHours();
+      
+      if (currentHour >= 6 && currentHour < 14) {
+        // 6:00 AM - 1:59 PM - Morning image
+        setBackgroundImage('/mke.webp');
+      } else if (currentHour >= 14 && currentHour < 20) {
+        // 2:00 PM - 7:59 PM - Afternoon image (current)
+        setBackgroundImage('/mke2.png');
+      } else {
+        // 8:00 PM - 5:59 AM - Night image
+        setBackgroundImage('/mkelate.webp');
+      }
+    };
+
+    updateBackgroundImage();
+    // Update every minute to check for time changes
+    const interval = setInterval(updateBackgroundImage, 60000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const reviews = [
     {
       name: "Sarah M.",
       age: 32,
       location: "Milwaukee, WI",
+      role: "Tenant",
       quote: "The property quality exceeded all my expectations. SNSHN made the entire process seamless and stress-free.",
       rating: 4.9,
       yearsWithSNSHN: 3
@@ -17,6 +43,7 @@ export default function Hero() {
       name: "James T.",
       age: 28,
       location: "Wauwatosa, WI",
+      role: "Owner",
       quote: "Best rental experience I've had. The team is responsive and the properties are top-notch.",
       rating: 5.0,
       yearsWithSNSHN: 2
@@ -25,6 +52,7 @@ export default function Hero() {
       name: "Maria G.",
       age: 35,
       location: "Shorewood, WI",
+      role: "Leasing",
       quote: "Professional service and beautiful properties. I found my dream apartment in just two weeks.",
       rating: 4.8,
       yearsWithSNSHN: 4
@@ -33,6 +61,7 @@ export default function Hero() {
       name: "David K.",
       age: 41,
       location: "Bay View, WI",
+      role: "Tenant",
       quote: "SNSHN transformed how I think about property management. Highly recommend to anyone looking.",
       rating: 4.7,
       yearsWithSNSHN: 1
@@ -41,6 +70,7 @@ export default function Hero() {
       name: "Lisa R.",
       age: 29,
       location: "East Side, WI",
+      role: "Owner",
       quote: "The attention to detail and quality of service is unmatched. So glad I chose SNSHN for my rental.",
       rating: 4.9,
       yearsWithSNSHN: 5
@@ -49,9 +79,46 @@ export default function Hero() {
       name: "Michael P.",
       age: 38,
       location: "Downtown Milwaukee",
+      role: "Leasing",
       quote: "Incredible experience from start to finish. The properties are modern and the service is outstanding.",
       rating: 5.0,
       yearsWithSNSHN: 2
+    },
+    {
+      name: "Jennifer L.",
+      age: 33,
+      location: "Third Ward, WI",
+      role: "Tenant",
+      quote: "Moving to Milwaukee was made easy thanks to SNSHN. They understood exactly what I was looking for.",
+      rating: 4.8,
+      yearsWithSNSHN: 1
+    },
+    {
+      name: "Robert C.",
+      age: 45,
+      location: "Walker's Point, WI",
+      role: "Owner",
+      quote: "As a property owner, SNSHN has been invaluable. They handle everything with professionalism and care.",
+      rating: 4.9,
+      yearsWithSNSHN: 6
+    },
+    {
+      name: "Amanda H.",
+      age: 27,
+      location: "Riverwest, WI",
+      role: "Leasing",
+      quote: "The leasing process was straightforward and transparent. I appreciated their honesty and expertise.",
+      rating: 5.0,
+      yearsWithSNSHN: 2
+    },
+    {
+      name: "Daniel S.",
+      age: 36,
+      location: "Bay View, WI",
+      role: "Tenant",
+      quote: "Outstanding customer service and beautiful properties. SNSHN sets the standard for property management.",
+      rating: 4.8,
+      yearsWithSNSHN: 3
     }
   ];
 
@@ -87,20 +154,19 @@ export default function Hero() {
   }, [reviews.length]);
 
   return (
-    <section className="relative min-h-screen pb-16 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative overflow-hidden pb-8">
+      {/* Background - Extended to include cards */}
+      <div className="absolute top-0 left-0 right-0 h-[110vh] z-0">
         <img
-  src={new URL('/mke2.png', import.meta.url).href}
-  alt="Milwaukee Background"
-  className="w-full h-full object-cover"
-/>
-
+          src={new URL(backgroundImage, import.meta.url).href}
+          alt="Milwaukee Background"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-32 pb-20 min-h-[75vh]">
         <h1
           className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white drop-shadow-2xl"
           style={{ fontFamily: 'Pirulen, sans-serif' }}
@@ -122,8 +188,8 @@ export default function Hero() {
         </Link>
       </div>
 
-      {/* Reviews Carousel */}
-      <div className="relative z-10 w-full overflow-hidden mt-8">
+      {/* Reviews Carousel - Positioned within background with sneak peek */}
+      <div className="relative z-10 w-full overflow-hidden mt-16">
         <div
           ref={scrollContainerRef}
           className="flex gap-8 overflow-x-hidden px-8"
@@ -147,6 +213,11 @@ export default function Hero() {
                   <p className="font-eurostile text-gray-400 text-xs text-center">
                     {review.location}
                   </p>
+                  <div className="mt-2 px-3 py-1 bg-yellow-400/20 border border-yellow-400/40 rounded-full">
+                    <p className="font-eurostile text-yellow-400 text-xs font-semibold uppercase tracking-wider">
+                      {review.role}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="flex-1 flex flex-col justify-between">
@@ -187,7 +258,6 @@ export default function Hero() {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
