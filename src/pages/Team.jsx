@@ -181,25 +181,14 @@ export default function Team() {
                 <div className="relative aspect-video bg-zinc-800 overflow-hidden">
                   <video 
                     className="w-full h-full object-cover"
-                    poster="/team-member-1-thumbnail.jpg"
+                    poster=""
+                    controls
                     onClick={(e) => {
-                      if (e.currentTarget.paused) {
-                        e.currentTarget.play();
-                      } else {
-                        e.currentTarget.pause();
-                      }
+                      e.stopPropagation();
                     }}
                   >
-                    <source src="/team-member-1-video.mp4" type="video/mp4" />
+                    <source src="/z_Upload-Image---Internal-Only-Style-2c32783c.mp4" type="video/mp4" />
                   </video>
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-all duration-300">
-                    <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-eurostile font-bold text-yellow-400 mb-2">Team Member Name</h3>
