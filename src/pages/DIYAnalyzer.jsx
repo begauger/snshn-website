@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PropertyAnalyzer from '../components/PropertyAnalyzer';
 
 export default function DIYAnalyzer() {
   const [activeTab, setActiveTab] = useState('property-analyzer');
@@ -188,15 +189,19 @@ export default function DIYAnalyzer() {
                 Try the {activeTool.title}
               </h3>
               
-              {/* Embed Area */}
-              <div className="bg-black/50 border-2 border-dashed border-white/20 rounded-xl p-16 text-center">
-                <p className="font-eurostile text-gray-400 text-lg">
-                  {activeTool.embedPlaceholder}
-                </p>
-                <p className="font-eurostile text-gray-500 text-sm mt-4">
-                  Insert your tool link or embed code in this section
-                </p>
-              </div>
+              {/* Conditional Rendering - Only show PropertyAnalyzer for property-analyzer tab */}
+              {activeTab === 'property-analyzer' ? (
+                <PropertyAnalyzer />
+              ) : (
+                <div className="bg-black/50 border-2 border-dashed border-white/20 rounded-xl p-16 text-center">
+                  <p className="font-eurostile text-gray-400 text-lg">
+                    {activeTool.embedPlaceholder}
+                  </p>
+                  <p className="font-eurostile text-gray-500 text-sm mt-4">
+                    Tool coming soon
+                  </p>
+                </div>
+              )}
             </div>
 
           </div>
