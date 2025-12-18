@@ -39,14 +39,7 @@ export default function PremiumLocation() {
             >
               OUR REVIEWS
             </a>
-            <a
-              href="https://wa.me/2627355989"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300 text-base uppercase tracking-wide text-center"
-            >
-              CONTACT US
-            </a>
+            
           </div>
         </div>
 
