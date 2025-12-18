@@ -133,8 +133,8 @@ export default function TenantResourcesPage() {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="max-w-5xl mx-auto px-6 py-16">
+        {/* FAQ Section - Added ID here */}
+        <div id="faq-section" className="max-w-5xl mx-auto px-6 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-eurostile font-bold text-white mb-4" style={{ fontFamily: 'Pirulen, sans-serif' }}>
               FREQUENTLY ASKED QUESTIONS

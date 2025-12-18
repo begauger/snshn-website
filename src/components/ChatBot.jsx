@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(0);
+  const [userMessage, setUserMessage] = useState('');
+  const [botResponse, setBotResponse] = useState('');
   const [formData, setFormData] = useState({
     topic: '',
     contactPerson: '',
@@ -13,7 +16,7 @@ export default function ChatBot() {
   });
   const [errors, setErrors] = useState({});
 
-  const COOLDOWN_MINUTES = 5; // 5 minute cooldown
+  const COOLDOWN_MINUTES = 5;
 
   // Validation functions
   const validateEmail = (email) => {
@@ -22,9 +25,7 @@ export default function ChatBot() {
   };
 
   const validatePhone = (phone) => {
-    // Remove all non-digits
     const digitsOnly = phone.replace(/\D/g, '');
-    // Check if it's 10 digits (US format)
     return digitsOnly.length === 10;
   };
 
@@ -32,7 +33,6 @@ export default function ChatBot() {
     return name.trim().length >= 2;
   };
 
-  // Check if user is in cooldown
   const checkCooldown = () => {
     const lastSubmit = localStorage.getItem('chatbot_last_submit');
     if (!lastSubmit) return null;
@@ -47,9 +47,113 @@ export default function ChatBot() {
     return null;
   };
 
-  // Conversation flow steps
+  // Smart keyword detection for navigation
+  const analyzeMessage = (message) => {
+    const lowerMessage = message.toLowerCase();
+    
+    // DIY Tools / Analyzer
+    if (lowerMessage.includes('diy') || lowerMessage.includes('tool') || 
+        lowerMessage.includes('analyzer') || lowerMessage.includes('property analyzer') ||
+        lowerMessage.includes('analyze')) {
+      return {
+        found: true,
+        response: "I can help you with our DIY tools! We have a Property Analyzer that uses AI to assess repairs and estimate costs.",
+        link: '/diy-analyzer',
+        linkText: 'Go to DIY Tools'
+      };
+    }
+    
+    // Leasing / Rentals
+    if (lowerMessage.includes('lease') || lowerMessage.includes('rent') || 
+        lowerMessage.includes('rental') || lowerMessage.includes('apartment') ||
+        lowerMessage.includes('property') || lowerMessage.includes('available')) {
+      return {
+        found: true,
+        response: "Looking for a place to rent? Check out our available properties and leasing options!",
+        link: '/leasing',
+        linkText: 'View Available Rentals'
+      };
+    }
+    
+    // Rehab / Renovation
+    if (lowerMessage.includes('rehab') || lowerMessage.includes('repair') || 
+        lowerMessage.includes('renovat') || lowerMessage.includes('fix') ||
+        lowerMessage.includes('remodel') || lowerMessage.includes('restore')) {
+      return {
+        found: true,
+        response: "We offer comprehensive rehab and renovation services! From budget repairs to luxury restorations.",
+        link: '/rehab',
+        linkText: 'View Our Rehab Services'
+      };
+    }
+    
+    // Blog
+    if (lowerMessage.includes('blog') || lowerMessage.includes('article') || 
+        lowerMessage.includes('read') || lowerMessage.includes('news')) {
+      return {
+        found: true,
+        response: "Check out our blog for expert tips and industry insights!",
+        link: '/blog',
+        linkText: 'Read Our Blog'
+      };
+    }
+    
+    // Tenant Resources / FAQ
+    if (lowerMessage.includes('tenant') || lowerMessage.includes('faq') || 
+        lowerMessage.includes('resource') || lowerMessage.includes('question') ||
+        lowerMessage.includes('help') || lowerMessage.includes('document')) {
+      return {
+        found: true,
+        response: "I can direct you to our Tenant Resources page with lease documents, FAQs, and important information.",
+        link: '/tenant-resources',
+        linkText: 'View Tenant Resources'
+      };
+    }
+    
+    // Contact
+    if (lowerMessage.includes('contact') || lowerMessage.includes('call') || 
+        lowerMessage.includes('email') || lowerMessage.includes('reach') ||
+        lowerMessage.includes('talk to someone')) {
+      return {
+        found: true,
+        response: "I can help you get in touch with our team! Would you like to continue with the contact form?",
+        link: '/contact',
+        linkText: 'Go to Contact Page'
+      };
+    }
+    
+    // Property Management
+    if (lowerMessage.includes('manage') || lowerMessage.includes('management') || 
+        lowerMessage.includes('owner')) {
+      return {
+        found: true,
+        response: "Interested in our property management services? We can help maximize your investment!",
+        link: '/manage',
+        linkText: 'Learn About Property Management'
+      };
+    }
+    
+    return { found: false };
+  };
+
+  const handleUserMessage = (e) => {
+    if (e.key === 'Enter' && userMessage.trim()) {
+      const analysis = analyzeMessage(userMessage);
+      
+      if (analysis.found) {
+        setBotResponse(analysis);
+        setStep(0.5); // Special step to show the navigation response
+      } else {
+        // If no match, proceed to contact flow
+        setStep(1);
+      }
+      setUserMessage('');
+    }
+  };
+
   const steps = {
     0: 'intro',
+    0.5: 'navigation',
     1: 'selectTopic',
     2: 'selectPerson',
     3: 'getName',
@@ -111,7 +215,6 @@ export default function ChatBot() {
         return;
       }
       
-      // Check cooldown
       const remainingCooldown = checkCooldown();
       if (remainingCooldown) {
         const remainingSeconds = Math.ceil(remainingCooldown / 1000);
@@ -131,9 +234,32 @@ export default function ChatBot() {
     }
   };
 
-  const sendMessage = () => {
-    // We'll implement SendGrid here later
-    console.log('Sending message:', formData);
+  const sendMessage = async () => {
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          topic: formData.topic,
+          contactPerson: formData.contactPerson,
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        console.log('Email sent successfully!', result);
+      } else {
+        console.error('Failed to send email:', result);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
 
   const resetChat = () => {
@@ -147,7 +273,39 @@ export default function ChatBot() {
       message: ''
     });
     setErrors({});
-    // Don't reset lastSubmitTime - keep the cooldown active
+    setBotResponse('');
+    setUserMessage('');
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    // Reset chat after closing
+    setTimeout(() => {
+      resetChat();
+    }, 300); // Wait for modal close animation
+  };
+
+  const handleBack = () => {
+    setErrors({}); // Clear any errors
+    
+    // Define back navigation logic
+    if (step === 0.5) {
+      setStep(0); // From navigation back to intro
+      setBotResponse('');
+    } else if (step === 1) {
+      setStep(0); // From select topic back to intro
+    } else if (step === 2) {
+      setStep(1); // From select person back to select topic
+    } else if (step === 3) {
+      setStep(2); // From name back to select person
+    } else if (step === 4) {
+      setStep(3); // From email back to name
+    } else if (step === 5) {
+      setStep(4); // From phone back to email
+    } else if (step === 6) {
+      // From confirmation, restart completely
+      resetChat();
+    }
   };
 
   return (
@@ -160,14 +318,11 @@ export default function ChatBot() {
       >
         {/* Sun-faced stick figure icon */}
         <div className="relative">
-          {/* Sun head */}
           <div className="w-6 h-6 bg-black rounded-full relative">
-            {/* Sun rays */}
             <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-0.5 h-2 bg-black"></div>
             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0.5 h-2 bg-black"></div>
             <div className="absolute top-1/2 -left-1 transform -translate-y-1/2 w-2 h-0.5 bg-black"></div>
             <div className="absolute top-1/2 -right-1 transform -translate-y-1/2 w-2 h-0.5 bg-black"></div>
-            {/* Face */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="flex gap-1 mb-0.5">
                 <div className="w-1 h-1 bg-yellow-400 rounded-full"></div>
@@ -176,13 +331,9 @@ export default function ChatBot() {
               <div className="w-3 h-1 bg-yellow-400 rounded-full"></div>
             </div>
           </div>
-          {/* Body */}
           <div className="w-0.5 h-4 bg-black mx-auto mt-0.5"></div>
-          {/* Waving arm (right) */}
           <div className="absolute top-3 -right-2 w-3 h-0.5 bg-black origin-left transform rotate-[-30deg] animate-wave"></div>
-          {/* Left arm */}
           <div className="absolute top-3 -left-2 w-3 h-0.5 bg-black"></div>
-          {/* Legs */}
           <div className="flex gap-1 mt-0.5 ml-2">
             <div className="w-0.5 h-3 bg-black transform rotate-12"></div>
             <div className="w-0.5 h-3 bg-black transform -rotate-12"></div>
@@ -205,7 +356,7 @@ export default function ChatBot() {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
               className="text-black hover:text-black/70 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,14 +375,58 @@ export default function ChatBot() {
                     Hi! I'm <span className="text-yellow-400 font-bold">SONNY</span>, your virtual assistant! 👋
                   </p>
                   <p className="font-eurostile text-white text-sm mt-2">
-                    Do you have questions about our services?
+                    I can help you navigate our site or connect you with our team. What would you like to do?
+                  </p>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    value={userMessage}
+                    onChange={(e) => setUserMessage(e.target.value)}
+                    onKeyPress={handleUserMessage}
+                    placeholder="Type your question (e.g., 'DIY tools' or 'contact')"
+                    className="w-full bg-zinc-800 text-white font-eurostile px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-400 focus:outline-none text-sm mb-2"
+                    autoFocus
+                  />
+                  <p className="text-xs text-gray-400 font-eurostile">
+                    Or click below to contact someone
                   </p>
                 </div>
                 <button
                   onClick={() => setStep(1)}
                   className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold py-3 rounded-lg transition-all duration-300"
                 >
-                  Yes, let's get started!
+                  Contact Our Team
+                </button>
+              </div>
+            )}
+
+            {/* Step 0.5: Navigation Response */}
+            {step === 0.5 && (
+              <div className="space-y-4">
+                <div className="bg-zinc-800 rounded-lg p-4 rounded-tl-none">
+                  <p className="font-eurostile text-white text-sm">
+                    {botResponse.response}
+                  </p>
+                </div>
+                <Link
+                  to={botResponse.link}
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold py-3 rounded-lg transition-all duration-300 text-center"
+                >
+                  {botResponse.linkText}
+                </Link>
+                <button
+                  onClick={() => setStep(0)}
+                  className="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-eurostile py-3 rounded-lg transition-all duration-300"
+                >
+                  Ask Something Else
+                </button>
+                <button
+                  onClick={() => setStep(1)}
+                  className="w-full bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-eurostile py-3 rounded-lg transition-all duration-300"
+                >
+                  Contact Our Team Instead
                 </button>
               </div>
             )}
@@ -255,6 +450,12 @@ export default function ChatBot() {
                     </button>
                   ))}
                 </div>
+                <button
+                  onClick={handleBack}
+                  className="w-full bg-transparent border-2 border-gray-500 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 font-eurostile py-2 rounded-lg transition-all duration-300 text-sm"
+                >
+                  ← Back
+                </button>
               </div>
             )}
 
@@ -277,6 +478,12 @@ export default function ChatBot() {
                     </button>
                   ))}
                 </div>
+                <button
+                  onClick={handleBack}
+                  className="w-full bg-transparent border-2 border-gray-500 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 font-eurostile py-2 rounded-lg transition-all duration-300 text-sm"
+                >
+                  ← Back
+                </button>
               </div>
             )}
 
@@ -307,6 +514,12 @@ export default function ChatBot() {
                     <p className="text-red-400 text-xs font-eurostile mt-1">{errors.name}</p>
                   )}
                 </div>
+                <button
+                  onClick={handleBack}
+                  className="w-full bg-transparent border-2 border-gray-500 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 font-eurostile py-2 rounded-lg transition-all duration-300 text-sm"
+                >
+                  ← Back
+                </button>
               </div>
             )}
 
@@ -337,6 +550,12 @@ export default function ChatBot() {
                     <p className="text-red-400 text-xs font-eurostile mt-1">{errors.email}</p>
                   )}
                 </div>
+                <button
+                  onClick={handleBack}
+                  className="w-full bg-transparent border-2 border-gray-500 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 font-eurostile py-2 rounded-lg transition-all duration-300 text-sm"
+                >
+                  ← Back
+                </button>
               </div>
             )}
 
@@ -364,6 +583,12 @@ export default function ChatBot() {
                     <p className="text-red-400 text-xs font-eurostile mt-1">{errors.phone}</p>
                   )}
                 </div>
+                <button
+                  onClick={handleBack}
+                  className="w-full bg-transparent border-2 border-gray-500 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 font-eurostile py-2 rounded-lg transition-all duration-300 text-sm"
+                >
+                  ← Back
+                </button>
               </div>
             )}
 
