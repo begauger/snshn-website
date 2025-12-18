@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -242,12 +243,22 @@ export default function Rehab() {
             <p className="font-eurostile text-gray-400 mb-8 text-sm">
               Email us at <a href="mailto:team@snshn.co" className="text-yellow-400 hover:underline">team@snshn.co</a> or reach out below!
             </p>
-            <a
-              href="/contact"
-              className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-4 rounded-full transition-all duration-300"
-            >
-              Contact Us Today
-            </a>
+            
+            {/* Two Buttons Side by Side */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                to="/diy-analyzer"
+                className="inline-block bg-zinc-800 hover:bg-zinc-700 border border-yellow-400 text-yellow-400 font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300"
+              >
+                Try Our Tool First!
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-12 py-4 rounded-full transition-all duration-300"
+              >
+                Contact Us Today
+              </Link>
+            </div>
           </div>
         </div>
 
