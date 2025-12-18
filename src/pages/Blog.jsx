@@ -7,13 +7,13 @@ export default function Blog() {
       title: "SNSHN",
       description: "Expert tips, industry trends, and best practices for property owners and investors. Learn how to maximize returns and streamline your property management operations.",
       image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
-      url: "https://www.snshn.co/blog1" // Replace with your actual blog URL
+      url: "https://app.smore.com/n/59rxq1" // Your Smore link
     },
     {
       title: "Beyond The Hump",
       description: "Everything tenants need to know about renting, maintenance requests, lease agreements, and making the most of their rental experience in Milwaukee.",
       image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-      url: "https://www.snshn.co/blog2" // Replace with your actual blog URL
+      url: "https://www.snshn.co/blog2" // Replace with your actual blog URL when ready
     }
   ];
 
