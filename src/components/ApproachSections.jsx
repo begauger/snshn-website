@@ -40,9 +40,11 @@ export default function ApproachSections() {
 
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-3xl mx-auto px-6 md:px-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
-              DIY Tools
-            </h2>
+            <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 px-8 py-4 rounded-2xl mb-6 shadow-2xl">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-black uppercase tracking-wide">
+                DIY TOOLS
+              </h2>
+            </div>
             <p className="text-base md:text-lg font-eurostile text-gray-200 leading-relaxed mb-4">
               Upload a photo of any property issue or renovation project, and our AI-powered image analyzer instantly provides cost estimates, repair recommendations, and value impact assessments.
             </p>

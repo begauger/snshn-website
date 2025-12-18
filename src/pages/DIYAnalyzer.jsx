@@ -99,17 +99,21 @@ export default function DIYAnalyzer() {
       <Header />
       
       <div className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          
-          {/* Title Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
-              DIY TOOLS
-            </h1>
-            <p className="text-lg md:text-xl font-eurostile text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              Powerful AI-driven tools to help you analyze properties, calculate investments, and make data-informed decisions
-            </p>
+        {/* Full-Width Title Section Banner */}
+        <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-16 -mt-24 pt-40">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-pirulen font-bold text-white mb-6 uppercase tracking-wide">
+                DIY TOOLS
+              </h1>
+              <p className="text-lg md:text-xl font-eurostile text-gray-300 leading-relaxed max-w-4xl mx-auto">
+                Powerful AI-driven tools to help you analyze properties, calculate investments, and make data-informed decisions
+              </p>
+            </div>
           </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 py-16">
 
           {/* Tool Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
