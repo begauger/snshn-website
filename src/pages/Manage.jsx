@@ -53,7 +53,7 @@ export default function Manage() {
       <div className="pt-24 pb-16">
         
         <div className="text-center py-16 px-6 bg-gradient-to-b from-zinc-900 to-black">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-wide mb-6" style={{ fontFamily: 'Pirulen, sans-serif' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-wide mb-6" style={{ fontFamily: 'Pirulen, sans-serif' }}>
             MANAGEMENT
           </h1>
           <p className="text-lg md:text-xl font-eurostile text-gray-300 leading-relaxed max-w-3xl mx-auto">
