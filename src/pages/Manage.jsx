@@ -8,24 +8,19 @@ export default function Manage() {
 
   const beforeAfterSlides = [
     {
-      before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      title: "Kitchen Renovation"
+      before: "/before1.JPG",
+      after: "/after1.jpg",
+      title: "Property Transformation 1"
     },
     {
-      before: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80",
-      title: "Bathroom Restoration"
+      before: "/before2.JPG",
+      after: "/after2.jpg",
+      title: "Property Transformation 2"
     },
     {
-      before: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80",
-      title: "Living Room Refresh"
-    },
-    {
-      before: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      title: "Exterior Transformation"
+      before: "/before3.JPG",
+      after: "/after3.jpg",
+      title: "Property Transformation 3"
     }
   ];
 
@@ -69,13 +64,13 @@ export default function Manage() {
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="relative bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
             
-            <div className="relative h-[500px] overflow-hidden">
+            <div className="relative h-[600px] overflow-hidden">
               
               <div className="absolute inset-0">
                 <img 
                   src={beforeAfterSlides[currentSlide].before}
                   alt="Before"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                 />
               </div>
 
@@ -91,7 +86,7 @@ export default function Manage() {
                 <img 
                   src={beforeAfterSlides[currentSlide].after}
                   alt="After"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                 />
               </div>
 

@@ -8,24 +8,19 @@ export default function Rehab() {
 
   const beforeAfterSlides = [
     {
-      before: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80",
-      title: "Complete Roofing Replacement"
+      before: "/before4.JPG",
+      after: "/after4.jpg",
+      title: "Restoration Project 1"
     },
     {
-      before: "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=80",
-      title: "Siding & Exterior Renovation"
+      before: "/before5.JPG",
+      after: "/after5.jpg",
+      title: "Restoration Project 2"
     },
     {
-      before: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?w=1200&q=80",
-      title: "Full Kitchen Remodel"
-    },
-    {
-      before: "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=1200&q=80",
-      after: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80",
-      title: "Complete HVAC System Install"
+      before: "/before6.JPG",
+      after: "/after6.jpg",
+      title: "Restoration Project 3"
     }
   ];
 
@@ -69,13 +64,13 @@ export default function Rehab() {
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="relative bg-zinc-900/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden">
             
-            <div className="relative h-[500px] overflow-hidden">
+            <div className="relative h-[600px] overflow-hidden">
               
               <div className="absolute inset-0">
                 <img 
                   src={beforeAfterSlides[currentSlide].before}
                   alt="Before"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                 />
               </div>
 
@@ -91,7 +86,7 @@ export default function Rehab() {
                 <img 
                   src={beforeAfterSlides[currentSlide].after}
                   alt="After"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                 />
               </div>
 

@@ -149,13 +149,13 @@ export default function AvailableServices() {
           ))}
         </div>
 
-        {/* View All Link */}
+        {/* DIY Analyzer Link */}
         <div className="text-center">
           <a
-            href="https://www.snshn.co/property-management-investment"
+            href="/diy-analyzer"
             className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-eurostile font-semibold px-10 py-4 rounded-full transition-all duration-300 text-base uppercase tracking-wide"
           >
-            View All Services
+            Try Our Virtual Tools!
           </a>
         </div>
 

@@ -19,7 +19,7 @@ export default function About() {
         
         <div className="relative w-full h-[400px] overflow-hidden">
           <img 
-            src="/snshnlogo4.png"
+            src="/coverbanner.jpg"
             alt="SNSHN"
             className="w-full h-full object-cover opacity-30"
           />
@@ -36,7 +36,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <img 
-                src="/snshnreallogo.png"
+                src="/coverone.jpg"
                 alt="SNSHN Logo"
                 className="w-full h-auto rounded-2xl"
               />
@@ -117,7 +117,8 @@ export default function About() {
         <div className="relative w-full py-32 mb-24">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80"
+              src="/coverbanner.jpg"
+
               alt="Milwaukee"
               className="w-full h-full object-cover"
             />
