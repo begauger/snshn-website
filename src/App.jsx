@@ -16,6 +16,7 @@ import Terms from './pages/Terms';
 import PromiseToPayPage from './pages/PromiseToPayPage';
 import ResidentCoordinationPage from './pages/ResidentCoordinationPage';
 import TenantResourcesPage from './pages/TenantResourcesPage';
+import ChatBot from './components/ChatBot';
 
 
 
@@ -41,12 +42,8 @@ function App() {
         <Route path="/promise-to-pay" element={<PromiseToPayPage />} />
         <Route path="/resident-coordination" element={<ResidentCoordinationPage />} />
         <Route path="/tenant-resources" element={<TenantResourcesPage />} />
-
-
-
-
-
       </Routes>
+      <ChatBot />
     </Router>
   );
 }
