@@ -1,18 +1,10 @@
-const Anthropic = require('@anthropic-ai/sdk');
+import Anthropic from '@anthropic-ai/sdk';
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-const userUsage = new Map();
-
-const getSessionId = (req) => {
-  return req.headers['x-forwarded-for']?.split(',')[0] || 
-         req.connection?.remoteAddress || 
-         'anonymous';
-};
-
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -26,23 +18,6 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const sessionId = getSessionId(req);
-    const usage = userUsage.get(sessionId) || { count: 0, email: null, name: null };
-    
-    if (usage.count >= 5) {
-      return res.status(403).json({ 
-        error: 'Usage limit reached. Contact us for a passcode.',
-        isBlocked: true
-      });
-    }
-    
-    if (usage.count >= 1 && !usage.email) {
-      return res.status(403).json({ 
-        error: 'Please provide your name and email to continue.',
-        needsInfo: true
-      });
-    }
-    
     const { imageData, mediaType } = req.body;
     
     if (!imageData) {
@@ -95,16 +70,13 @@ Be specific and professional. If you cannot see clear property damage, indicate 
     const cleanJson = textContent.replace(/```json\n?|```\n?/g, '').trim();
     const parsed = JSON.parse(cleanJson);
     
-    usage.count += 1;
-    userUsage.set(sessionId, usage);
-    
     res.json({ 
       assessment: parsed,
-      usageCount: usage.count 
+      usageCount: 1 
     });
     
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'Failed to analyze image' });
   }
-};
+}
