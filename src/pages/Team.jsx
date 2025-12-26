@@ -187,8 +187,7 @@ export default function Team() {
                       e.stopPropagation();
                     }}
                   >
-                    <source src="/z_Upload-Image---Internal-Only-Style-2c32783c.mp4" type="video/mp4" />
-                  </video>
+                   
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-eurostile font-bold text-yellow-400 mb-2">Team Member Name</h3>
